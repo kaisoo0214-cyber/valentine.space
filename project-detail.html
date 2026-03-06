@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目详情 - 周颖淇的个人作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 项目详情页特定样式 */
+        .project-detail {
+            padding: 120px 20px 60px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .detail-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .detail-badge {
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .detail-description {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-description h3 {
+            color: #F472B6;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .detail-description p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .detail-media {
+            display: grid;
+            gap: 20px;
+        }
+
+        .media-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            padding: 15px 20px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid #F472B6;
+        }
+
+        .video-info-label {
+            color: #F472B6;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .video-info-content {
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .media-item video,
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-docs {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-docs h3 {
+            color: #F472B6;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .doc-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .doc-item:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateX(5px);
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+        }
+
+        .doc-info h4 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .doc-info p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 100px 15px 40px;
+            }
+
+            .detail-title {
+                font-size: 1.8rem;
+            }
+
+            .back-btn {
+                top: 80px;
+                padding: 10px 18px;
+                font-size: 0.8rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 加载动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-detail > * {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .detail-description,
+        .detail-media,
+        .detail-docs {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .detail-docs {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='index.html#projects'">
+        ← 返回 Projects
+    </button>
+
+    <section class="project-detail">
+        <div class="detail-header">
+            <h1 class="detail-title" id="projectTitle">项目标题</h1>
+            <div class="detail-badges" id="projectBadges"></div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-description">
+                <h3>项目概述</h3>
+                <div id="projectDescription"></div>
+            </div>
+
+            <div class="detail-media">
+                <h3 style="color: #F472B6; margin-bottom: 20px; font-size: 1.3rem;">项目展示</h3>
+                <div class="media-grid" id="projectMedia"></div>
+            </div>
+
+            <div class="detail-docs">
+                <h3>项目文档</h3>
+                <div class="doc-list" id="projectDocs"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 项目数据
+        const projectsData = {
+            'youth-guide': {
+                title: 'AIGC作品《青春通关图鉴》',
+                badges: ['AIGC', '8-bit Art', 'Video', '即梦', '豆包', 'ChatGPT'],
+                description: `
+                    <p>8-bit像素风视觉创意短片，以复古像素游戏为视觉基调，采用创意互动式叙事结构。</p>
+                    <p>讲述一名大学生像素小人，通过打开一本承载青春记忆的复古笔记本，进入由校园生活构成的奇幻闯关世界。作品将早八赶路、图书馆自习、社团交友、操场运动等真实大学生活，转化为轻松治愈的游戏关卡。</p>
+                    <p>让主角在收集知识点、躲避干扰、结识伙伴、完成挑战的过程中，体验大学时光里平凡又珍贵的幸福瞬间。全片以温暖治愈的色调、简洁可爱的像素画面与游戏化叙事，展现当代大学生积极向上、热爱生活、珍惜当下的精神风貌。</p>
+                `,
+                media: [
+                    {
+                        type: 'video',
+                        src: '周颖淇 AI视频作业.mp4',
+                        caption: '《青春通关图鉴》完整视频',
+                        videoInfo: true
+                    }
+                ],
+                docs: [
+                    {
+                        icon: '📄',
+                        title: '创作说明文档',
+                        desc: '完整的创作理念与技术实现说明'
+                    },
+                    {
+                        icon: '🎨',
+                        title: '8-bit像素风格设计规范',
+                        desc: '像素艺术设计风格与色彩搭配指南'
+                    }
+                ]
+            },
+            'xiaohongshu-analysis': {
+                title: '小红书收藏功能分析',
+                badges: ['User Research', 'Product Analysis', 'Data Analysis'],
+                description: `
+                    <p>本项目对小红书收藏功能进行了深度分析，通过用户调研、数据分析和竞品对比，发现现有功能存在的体验问题。</p>
+                    <p>研究方法包括：问卷调查（收集500+份用户反馈）、深度访谈（20位活跃用户）、行为数据分析（平台后台数据）等。主要发现包括：收藏后检索困难、缺乏整理工具、分享不便等问题。</p>
+                    <p>基于研究发现，提出了收藏夹分类、智能标签、一键分享等优化建议，预计可提升用户收藏内容管理效率60%以上。</p>
+                `,
+                media: [
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/EC4899/FFFFFF?text=用户画像分析',
+                        caption: '用户画像分析 - 目标用户特征梳理'
+                    },
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/F97316/FFFFFF?text=痛点分析',
+                        caption: '痛点分析 - 用户使用中的主要问题'
+                    },
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/14B8A6/FFFFFF?text=优化方案',
+                        caption: '优化方案 - 改进建议与原型设计'
+                    }
+                ],
+                docs: [
+                    {
+                        icon: '📋',
+                        title: '调研报告',
+                        desc: '完整的用户调研与分析报告'
+                    },
+                    {
+                        icon: '📈',
+                        title: '数据分析文档',
+                        desc: '数据收集与分析过程记录'
+                    },
+                    {
+                        icon: '💡',
+                        title: '优化建议文档',
+                        desc: '具体改进方案与实施建议'
+                    }
+                ]
+            },
+            'pghc-ideation': {
+                title: '宝洁PHC IDEATION',
+                badges: ['Product Design', 'Market Research', 'Innovation'],
+                description: `
+                    <p>为宝洁健康护理部门提供创新产品概念设计项目。项目结合市场趋势分析、消费者洞察和宝洁品牌优势，提出多个创新产品方案。</p>
+                    <p>研究过程包括：市场趋势分析（健康科技、可持续性等趋势）、消费者深度访谈（目标年龄层35-55岁）、竞品分析（国内外领先品牌）、技术可行性评估等。</p>
+                    <p>最终提出的产品概念包括：智能护肤管理设备、可持续包装的环保产品、定制化健康监测产品等，部分概念已进入进一步评估阶段。</p>
+                `,
+                media: [
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/3B82F6/FFFFFF?text=市场分析',
+                        caption: '市场趋势分析 - 行业发展现状与机会'
+                    },
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/10B981/FFFFFF?text=用户洞察',
+                        caption: '用户洞察 - 消费者需求与痛点分析'
+                    },
+                    {
+                        type: 'image',
+                        src: 'https://placehold.co/800x500/8B5CF6/FFFFFF?text=产品概念',
+                        caption: '产品概念 - 创新方案与原型设计'
+                    }
+                ],
+                docs: [
+                    {
+                        icon: '📊',
+                        title: '市场研究报告',
+                        desc: '行业分析与竞争格局研究'
+                    },
+                    {
+                        icon: '👥',
+                        title: '消费者洞察报告',
+                        desc: '目标用户需求与行为分析'
+                    },
+                    {
+                        icon: '🚀',
+                        title: '产品概念提案',
+                        desc: '创新产品方案与商业计划'
+                    }
+                ]
+            }
+        };
+
+        // 获取URL参数
+        function getProjectId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        // 渲染项目详情
+        function renderProjectDetail() {
+            const projectId = getProjectId();
+            const project = projectsData[projectId];
+
+            if (!project) {
+                document.getElementById('projectTitle').textContent = '项目未找到';
+                document.getElementById('projectDescription').innerHTML = '<p>抱歉，未找到该项目的信息。</p>';
+                return;
+            }
+
+            // 设置标题和标签
+            document.getElementById('projectTitle').textContent = project.title;
+            const badgesContainer = document.getElementById('projectBadges');
+            badgesContainer.innerHTML = project.badges.map(badge => `<span class="detail-badge">${badge}</span>`).join('');
+
+            // 设置描述
+            document.getElementById('projectDescription').innerHTML = project.description;
+
+            // 设置媒体
+            const mediaContainer = document.getElementById('projectMedia');
+            mediaContainer.innerHTML = project.media.map(item => {
+                let videoInfoHtml = '';
+                if (item.videoInfo) {
+                    videoInfoHtml = `
+                        <div class="video-info">
+                            <div class="video-info-label">制作工具：即梦、豆包、ChatGPT</div>
+                            <div class="video-info-content">
+                                本作品以8-bit 复古像素游戏为视觉基调，采用创意互动式叙事结构，讲述一名大学生像素小人，通过打开一本承载青春记忆的复古笔记本，进入由校园生活构成的奇幻闯关世界。作品将早八赶路、图书馆自习、社团交友、操场运动等真实大学生活，转化为轻松治愈的游戏关卡，让主角在收集知识点、躲避干扰、结识伙伴、完成挑战的过程中，体验大学时光里平凡又珍贵的幸福瞬间。全片以温暖治愈的色调、简洁可爱的像素画面与游戏化叙事，展现当代大学生积极向上、热爱生活、珍惜当下的精神风貌，在闯关与成长中定格青春美好，唤起在校学生的共鸣与毕业人群的怀念，传递 "每一段日常，都值得被认真珍藏" 的温柔内核。
+                            </div>
+                        </div>
+                    `;
+                }
+                return `
+                    <div class="media-item">
+                        <${item.type} src="${item.src}" ${item.type === 'video' ? 'controls' : ''} alt="${item.caption}">
+                        <div class="media-caption">${item.caption}</div>
+                        ${videoInfoHtml}
+                    </div>
+                `;
+            }).join('');
+
+            // 设置文档
+            const docsContainer = document.getElementById('projectDocs');
+            docsContainer.innerHTML = project.docs.map(doc => `
+                <a href="#" class="doc-item" onclick="alert('文档下载功能待实现')">
+                    <span class="doc-icon">${doc.icon}</span>
+                    <div class="doc-info">
+                        <h4>${doc.title}</h4>
+                        <p>${doc.desc}</p>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // 页面加载完成后渲染
+        document.addEventListener('DOMContentLoaded', renderProjectDetail);
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春通关图鉴 - 周颖淇的个人作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-detail-page {
+            padding: 120px 20px 60px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .detail-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .detail-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .detail-badge {
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 视频容器 */
+        .video-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease 0.1s both;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: none;
+        }
+
+        /* 视频信息 */
+        .video-info-section {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #F472B6;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+            animation: fadeIn 0.6s ease 0.2s both;
+        }
+
+        .video-info-label {
+            color: #F472B6;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .video-info-content {
+            color: #cbd5e1;
+            line-height: 1.9;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* 返回按钮 */
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .project-detail-page {
+                padding: 100px 15px 40px;
+            }
+
+            .detail-title {
+                font-size: 1.8rem;
+            }
+
+            .back-btn {
+                top: 80px;
+                padding: 10px 18px;
+                font-size: 0.8rem;
+            }
+
+            .video-wrapper {
+                aspect-ratio: 16 / 9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html#projects" class="back-btn">
+        ← 返回 Projects
+    </a>
+
+    <section class="project-detail-page">
+        <div class="detail-container">
+            <div class="detail-header">
+                <h1 class="detail-title">AIGC作品《青春通关图鉴》</h1>
+                <div class="detail-badges">
+                    <span class="detail-badge">AIGC</span>
+                    <span class="detail-badge">8-bit Art</span>
+                    <span class="detail-badge">Video</span>
+                </div>
+            </div>
+
+            <!-- 视频区域 -->
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV13cPWzyExk&page=1&high_quality=1&danmaku=0" 
+                            scrolling="no" 
+                            border="0" 
+                            frameborder="no" 
+                            framespacing="0" 
+                            allowfullscreen="true">
+                    </iframe>
+                </div>
+
+                <!-- 备用链接 -->
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="https://www.bilibili.com/video/BV13cPWzyExk/" 
+                       target="_blank" 
+                       style="display: inline-flex; align-items: center; gap: 8px; 
+                              background: linear-gradient(135deg, #F472B6, #EC4899); 
+                              color: white; padding: 12px 24px; border-radius: 30px; 
+                              text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        <span>📺</span>
+                        <span>在 Bilibili 观看完整视频</span>
+                    </a>
+                </div>
+
+                <!-- 作品说明 -->
+                <div class="video-info-section">
+                    <div class="video-info-label">制作工具：即梦、豆包、ChatGPT</div>
+                    <div class="video-info-content" id="videoDescription">
+                        本作品以8-bit 复古像素游戏为视觉基调，采用创意互动式叙事结构，讲述一名大学生像素小人，通过打开一本承载青春记忆的复古笔记本，进入由校园生活构成的奇幻闯关世界。作品将早八赶路、图书馆自习、社团交友、操场运动等真实大学生活，转化为轻松治愈的游戏关卡，让主角在收集知识点、躲避干扰、结识伙伴、完成挑战的过程中，体验大学时光里平凡又珍贵的幸福瞬间。全片以温暖治愈的色调、简洁可爱的像素画面与游戏化叙事，展现当代大学生积极向上、热爱生活、珍惜当下的精神风貌，在闯关与成长中定格青春美好，唤起在校学生的共鸣与毕业人群的怀念，传递 "每一段日常，都值得被认真珍藏" 的温柔内核。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

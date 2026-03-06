@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书收藏功能分析 - 周颖淇的个人作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .project-detail-page {
+            padding: 120px 20px 60px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .detail-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .detail-badge {
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 项目概述卡片 */
+        .overview-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease 0.1s both;
+        }
+
+        .overview-title {
+            color: #F472B6;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .overview-content {
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .overview-section-block {
+            margin-bottom: 20px;
+        }
+
+        .overview-section-block h4 {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .action-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #F472B6;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* PDF 查看器 */
+        .pdf-viewer-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.6s ease 0.2s both;
+        }
+
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .pdf-header h3 {
+            color: #F472B6;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .pdf-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-info {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            padding: 0 15px;
+        }
+
+        .pdf-canvas-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: auto;
+        }
+
+        #pdfCanvas {
+            max-width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .loading-text {
+            color: #94a3b8;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* 返回按钮 */
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, #F472B6, #EC4899);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .project-detail-page {
+                padding: 100px 15px 40px;
+            }
+
+            .detail-title {
+                font-size: 1.8rem;
+            }
+
+            .back-btn {
+                top: 80px;
+                padding: 10px 18px;
+                font-size: 0.8rem;
+            }
+
+            .pdf-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .pdf-controls {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html#projects" class="back-btn">
+        ← 返回 Projects
+    </a>
+
+    <section class="project-detail-page">
+        <div class="detail-container">
+            <div class="detail-header">
+                <h1 class="detail-title">小红书收藏功能体验与优化报告</h1>
+                <div class="detail-badges">
+                    <span class="detail-badge">User Research</span>
+                    <span class="detail-badge">Product Analysis</span>
+                    <span class="detail-badge">Data Analysis</span>
+                </div>
+            </div>
+
+            <!-- PDF 查看器 -->
+            <div class="pdf-viewer-section">
+                <div class="pdf-header">
+                    <h3>📄 完整报告文档</h3>
+                    <div class="pdf-controls">
+                        <a href="documents/周颖淇-小红书收藏功能体验与优化报告.pdf" target="_blank" class="control-btn" style="text-decoration: none;">在新标签页中打开</a>
+                        <button class="control-btn" id="downloadBtn">下载 PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-canvas-container">
+                    <iframe src="documents/周颖淇-小红书收藏功能体验与优化报告.pdf" 
+                            style="width: 100%; height: 600px; border: none; border-radius: 8px;" 
+                            title="小红书收藏功能体验与优化报告">
+                        您的浏览器不支持 iframe。请<a href="documents/周颖淇-小红书收藏功能体验与优化报告.pdf" target="_blank">点击这里</a>下载PDF文件。
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- 项目概述 -->
+            <div class="overview-section">
+                <h2 class="overview-title">项目概述</h2>
+                <div class="overview-content">
+                    <div class="overview-section-block">
+                        <h4>【项目概述】</h4>
+                        <p>针对小红书收藏功能"管理机制缺失""内容囤积"核心痛点，主导用户需求挖掘至产品优化策略输出的全流程，聚焦收藏功能体验升级，输出可落地的产品优化方案。</p>
+                    </div>
+
+                    <div class="overview-section-block">
+                        <h4>【核心动作】</h4>
+                        <ul class="action-list">
+                            <li>通过关键词检索采集202条用户笔记数据，经数据清洗提炼3大核心需求</li>
+                            <li>以Instagram、抖音为对标，完成不同维度竞品功能差异分析，明确优化突破口</li>
+                            <li>全链路拆解收藏功能体验，结合SWOT分析定位关键优化缺口</li>
+                            <li>聚焦"管理机制+内容管理"输出针对性优化策略，含流程图、脑图、原型图、UI/UX设计</li>
+                        </ul>
+                    </div>
+
+                    <div class="overview-section-block">
+                        <h4>【项目成果】</h4>
+                        <p>形成5k字体验分析报告，数据验证"收藏整理"为规模化用户痛点；输出含"时间筛选""批量移动"等功能的优化方案，覆盖用户核心诉求；提炼竞品可复用经验，明确产品差异化优化方向。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfPath = 'documents/周颖淇-小红书收藏功能体验与优化报告.pdf';
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            // 下载 PDF
+            downloadBtn.addEventListener('click', function() {
+                const link = document.createElement('a');
+                link.href = pdfPath;
+                link.download = '周颖淇-小红书收藏功能体验与优化报告.pdf';
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

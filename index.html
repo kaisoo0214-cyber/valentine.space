@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Chu - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 动态弥散紫光背景 -->
+    <div class="ambient-light-container">
+        <div class="ambient-light light-1"></div>
+        <div class="ambient-light light-2"></div>
+        <div class="ambient-light light-3"></div>
+        <div class="ambient-light light-4"></div>
+    </div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">Valentine Chu</a>
+            <ul class="nav-menu">
+                <li><a href="#hero">About me</a></li>
+                <li><a href="#experience">Experiences</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Y2K Style -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        
+        <!-- 像素云朵装饰 -->
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+        <div class="cloud cloud-3">☁️</div>
+        
+        <div class="hero-content">
+            <!-- ABOUT ME 标题 -->
+            <div class="about-me-title">
+                <img src="assets/资源 13@300x.png" alt="ABOUT ME" class="about-me-img" onerror="this.style.display='none'">
+            </div>
+            
+            <!-- 主标题 -->
+            <h1 class="hero-main-title">
+                <span class="highlight">Hi!</span> I'm <span class="name-highlight">Valentine Chu</span>
+            </h1>
+            
+            <!-- 介绍卡片 -->
+            <div class="intro-card">
+                <div class="cd-icon">💿</div>
+                <div class="intro-text">
+                    <p>A first-year graduate student in Journalism and Communication at Shanghai Jiao Tong University with a background in visual design. I bring creativity and empathy to every project, gained through cross-border collaboration.</p>
+                    <p>I'm most energized by the intersection of visual aesthetics, user-centered product thinking, and AI innovation, exploring how design intuition and AI can create solutions that are both impactful and visually compelling.</p>
+                </div>
+                <!-- 装饰贴纸 -->
+                <div class="sticker chick">🐥</div>
+            </div>
+            
+            <!-- 按钮 -->
+            <div class="hero-buttons">
+                <a href="#experience" class="btn btn-y2k btn-blue">Resume</a>
+                <a href="#projects" class="btn btn-y2k btn-pink">Projects</a>
+            </div>
+        </div>
+        
+        <!-- 右侧照片区域 - 复古手机设计 -->
+        <div class="hero-phone">
+            <div class="phone-frame">
+                <!-- 手机顶部装饰 -->
+                <div class="phone-header">
+                    <div class="phone-notch"></div>
+                    <div class="phone-speaker"></div>
+                </div>
+                <!-- 彩色心形装饰 -->
+                <div class="heart-decorations">
+                    <span class="heart-float heart-1">💜</span>
+                    <span class="heart-float heart-2">💛</span>
+                    <span class="heart-float heart-3">💚</span>
+                    <span class="heart-float heart-4">💙</span>
+                    <span class="heart-float heart-5">💖</span>
+                    <span class="heart-float heart-6">🧡</span>
+                </div>
+                <!-- 手机屏幕 -->
+                <div class="phone-screen">
+                    <img src="assets/View recent photos 3.jpeg" 
+                         alt="Valentine Chu" 
+                         class="phone-photo"
+                         onerror="this.src='https://placehold.co/300x400/6366F1/FFFFFF?text=VC'">
+                    <!-- 彩虹贴纸 -->
+                    <div class="rainbow-sticker">
+                        <span class="rainbow">🌈</span>
+                    </div>
+                    <!-- 星星贴纸 -->
+                    <div class="star-sticker">
+                        <span class="star">✨</span>
+                    </div>
+                </div>
+                <!-- 手机底部按钮 -->
+                <div class="phone-footer">
+                    <div class="phone-button smiley-btn">😊</div>
+                    <div class="phone-home-btn">
+                        <span class="square">◻️</span>
+                    </div>
+                    <div class="phone-button flower-btn">🌸</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部装饰 -->
+        <div class="bottom-decoration">
+            <div class="sparkle-box"></div>
+        </div>
+    </section>
+
+    <!-- Experiences Section - Glassmorphism Style -->
+    <section id="experience" class="section experiences">
+        <div class="container">
+            <h2 class="section-title">Experiences</h2>
+            
+            <!-- Education - Timeline Style -->
+            <div class="exp-section">
+                <h3 class="exp-section-title">
+                    <span class="exp-icon">🎓</span>
+                    Education
+                </h3>
+                <div class="edu-timeline">
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-marker">
+                            <div class="edu-timeline-dot"></div>
+                            <div class="edu-timeline-line"></div>
+                        </div>
+                        <div class="glass-card edu-timeline-card">
+                            <div class="edu-timeline-header">
+                                <div class="edu-logo-small">
+                                    <img src="assets/校标-校徽.png" 
+                                         alt="上海交通大学"
+                                         onerror="this.src='https://placehold.co/60x60/6366F1/FFFFFF?text=SJTU'">
+                                </div>
+                                <div class="edu-timeline-info">
+                                    <div class="edu-timeline-title-row">
+                                        <h4 class="edu-school">上海交通大学</h4>
+                                        <span class="edu-badge">在读</span>
+                                    </div>
+                                    <p class="edu-school-en">Shanghai Jiao Tong University</p>
+                                    <p class="edu-degree">硕士 / 新闻与传播</p>
+                                    <p class="edu-degree-en">Master in Journalism and Communication</p>
+                                    <p class="edu-time">2025.09 ~ Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-marker">
+                            <div class="edu-timeline-dot edu-timeline-dot-graduated"></div>
+                        </div>
+                        <div class="glass-card edu-timeline-card">
+                            <div class="edu-timeline-header">
+                                <div class="edu-logo-small">
+                                    <img src="assets/Donghua_University_logo.png" 
+                                         alt="东华大学"
+                                         onerror="this.src='https://placehold.co/60x60/EC4899/FFFFFF?text=DHU'">
+                                </div>
+                                <div class="edu-timeline-info">
+                                    <div class="edu-timeline-title-row">
+                                        <h4 class="edu-school">东华大学</h4>
+                                        <span class="edu-badge edu-badge-graduated">已毕业</span>
+                                    </div>
+                                    <p class="edu-school-en">Donghua University</p>
+                                    <p class="edu-degree">本科 / 视觉传达设计</p>
+                                    <p class="edu-degree-en">Bachelor in Visual Communication Design</p>
+                                    <p class="edu-time">2021.09 ~ 2025.07</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internships -->
+            <div class="exp-section">
+                <h3 class="exp-section-title">
+                    <span class="exp-icon">💼</span>
+                    Internships
+                </h3>
+                <div class="exp-cards">
+                    <div class="glass-card exp-card">
+                        <div class="exp-card-header">
+                            <div class="exp-company-info">
+                                <h4 class="exp-company">美团</h4>
+                                <p class="exp-position">NoCode AI校园大使</p>
+                            </div>
+                            <span class="exp-duration">2025.12 - 至今</span>
+                        </div>
+                        <ul class="exp-highlights">
+                            <li>从0搭建AIGC学习社群，通过校园渠道测试多种获客方式（社群投放、1v1宣传、校园墙），完成冷启动</li>
+                            <li>基于转化反馈迭代传播策略，从"人情式宣传"调整为"利他价值表达+精准人群触达"，显著提升用户接受度</li>
+                            <li>负责赛事线下推广与转化，8天内将社群从60人增长至118人（+82%），报名人数从18提升至64</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card exp-card">
+                        <div class="exp-card-header">
+                            <div class="exp-company-info">
+                                <h4 class="exp-company">上海瞬颜数字科技有限公司（AI初创）</h4>
+                                <p class="exp-position">总经理助理</p>
+                            </div>
+                            <span class="exp-duration">2025.03 - 2025.08</span>
+                        </div>
+                        <ul class="exp-highlights">
+                            <li>对接B端运动时尚品牌客户，将模糊需求拆解为可执行产品标准，推进N个项目按期交付</li>
+                            <li>负责技术与创意团队协同，优化算法/模板将交付周期从2周缩短至7天（一周100个SKU）</li>
+                            <li>构建AIGC赛道对标账号数据分析体系，产出近30篇新媒体内容创作</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card exp-card">
+                        <div class="exp-card-header">
+                            <div class="exp-company-info">
+                                <h4 class="exp-company">李宁(中国)体育用品有限公司</h4>
+                                <p class="exp-position">电商产品推广实习生</p>
+                            </div>
+                            <span class="exp-duration">2024.08 - 2025.01</span>
+                        </div>
+                        <ul class="exp-highlights">
+                            <li>用竞品对比与人群画像数据驱动电商视觉内容优化，支持点击与转化提升策略</li>
+                            <li>独立筛选10+家AI图像生成团队，促成3家优质供应商合作，为电商AI项目落地提供技术支撑</li>
+                            <li>产出品牌24FW、25SS新品潮流趋势洞察报告及KOL产品Seeding Brief，结论直接用于市场执行层</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card exp-card">
+                        <div class="exp-card-header">
+                            <div class="exp-company-info">
+                                <h4 class="exp-company">TIEX & SHEREWIRES</h4>
+                                <p class="exp-position">项目策划实习生</p>
+                            </div>
+                            <span class="exp-duration">2024.06 - 2024.09</span>
+                        </div>
+                        <ul class="exp-highlights">
+                            <li>参与栏目主题策划与采访流程设计，结合目标受众需求提出内容框架与传播方向</li>
+                            <li>负责5国成员跨国团队任务分配与进度跟进，处理突发问题确保栏目按时上线</li>
+                            <li>产出5期栏目内容为平台引流上千人次，并总结跨国项目协作流程供后续复用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="exp-section">
+                <h3 class="exp-section-title">
+                    <span class="exp-icon">🚀</span>
+                    Projects
+                </h3>
+                <div class="exp-cards">
+                    <div class="glass-card exp-card exp-card-project">
+                        <div class="exp-card-header">
+                            <div class="exp-project-info">
+                                <h4 class="exp-project-name">适老化健康管理应用</h4>
+                                <span class="exp-project-tag">美团NoCode AI工作坊</span>
+                            </div>
+                            <span class="exp-duration">2025.10 - 2025.11</span>
+                        </div>
+                        <p class="exp-project-desc">聚焦中老年健康管理痛点，主导轻量化手机与Web端应用从0到1的产品设计与落地</p>
+                        <ul class="exp-highlights">
+                            <li>基于用户调研确立"查健康、设提醒、记健康"三大核心功能，砍掉冗余功能确保轻量化</li>
+                            <li>主导PRD文档撰写、页面框架开发设计与适老化交互规范制定（字体偏好、语音功能等）</li>
+                            <li>产品部署上线并通过评选进入答辩环节，获评委"落地性强、有开发潜力"高度认可</li>
+                        </ul>
+                        <a href="https://aging-health-harmony.nocode.host" class="exp-link" target="_blank">查看作品 →</a>
+                    </div>
+                    <div class="glass-card exp-card exp-card-project">
+                        <div class="exp-card-header">
+                            <div class="exp-project-info">
+                                <h4 class="exp-project-name">小红书收藏功能体验分析与优化</h4>
+                                <span class="exp-project-tag">个人项目</span>
+                            </div>
+                            <span class="exp-duration">2025.11</span>
+                        </div>
+                        <p class="exp-project-desc">针对收藏功能"管理机制缺失""内容囤积"痛点，主导用户需求挖掘至产品优化策略输出全流程</p>
+                        <ul class="exp-highlights">
+                            <li>通过关键词检索采集202条用户笔记数据，经清洗提炼3大核心需求</li>
+                            <li>以Instagram、抖音为对标完成竞品功能差异分析，结合SWOT分析定位关键优化缺口</li>
+                            <li>形成5k字体验分析报告，输出含"时间筛选""批量移动"等功能的可落地方案</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card exp-card exp-card-project">
+                        <div class="exp-card-header">
+                            <div class="exp-project-info">
+                                <h4 class="exp-project-name">宝洁PHC IDEATION项目</h4>
+                                <span class="exp-project-tag">校企合作</span>
+                            </div>
+                            <span class="exp-duration">2023.03 - 2025.07</span>
+                        </div>
+                        <p class="exp-project-desc">协助宝洁旗下品牌(Oral-B、Neurobion、SK-II)国际团队进行产品线上线下功能推广方案设计</p>
+                        <ul class="exp-highlights">
+                            <li>针对不同产品USP策划Demo体验脚本与制作视觉实验方案</li>
+                            <li>提案经3次品牌方反馈与团队测评调整后，产出12支实验视频与2支视觉动画样片</li>
+                            <li>实验成果落地性已被品牌方证实与收录</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Campus -->
+            <div class="exp-section">
+                <h3 class="exp-section-title">
+                    <span class="exp-icon">🌟</span>
+                    In Campus
+                </h3>
+                <div class="campus-grid">
+                    <div class="glass-card campus-card">
+                        <div class="campus-icon">⚡</div>
+                        <h4 class="campus-title">SJTU极客创新社</h4>
+                        <p class="campus-role">活动部部长 · 2026.01～至今</p>
+                        <p class="campus-desc">组织策划与执行日常活动、沙龙、黑客松等社群活动，负责活动全流程管理与社团运营</p>
+                    </div>
+                    <div class="glass-card campus-card">
+                        <div class="campus-icon">🏆</div>
+                        <h4 class="campus-title">欧莱雅《有意思青年》高校公益项目</h4>
+                        <p class="campus-role">内容&社群运营 · 2023.03-2023.09</p>
+                        <p class="campus-desc">运营5个社群（300+人），单篇推文阅读量破10k，线下引流上万人次，公益义卖金额达12万元，团队入围全国总决赛获实践星奖</p>
+                    </div>
+                    <div class="glass-card campus-card">
+                        <div class="campus-icon">🌍</div>
+                        <h4 class="campus-title">东华大学国际交流学院</h4>
+                        <p class="campus-role">马来西亚留学生校代表 · 2024.01-2025.07</p>
+                        <p class="campus-desc">作为策展人策划执行校内国际文化节、教育展及国际校友论坛等活动全流程组织及宣传设计工作，对接学院老师与管理马来西亚留学生</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经验 -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-href="project-youth-guide.html">
+                    <div class="project-image">
+                        <img src="assets/卡片1.png"
+                             alt="AIGC作品《青春通关图鉴》"
+                             onerror="this.src='https://placehold.co/400x250/8B5CF6/FFFFFF?text=青春通关图鉴'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AIGC作品《青春通关图鉴》</h3>
+                        <p class="project-description">
+                            8-bit像素风视觉创意短片，像素小人在校园关卡中体验成长与温暖，定格大学时光里的每一份幸福。
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">AIGC</span>
+                            <span class="tag">8-bit Art</span>
+                            <span class="tag">Video</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-href="project-xiaohongshu.html">
+                    <div class="project-image">
+                        <img src="assets/卡片2.png"
+                             alt="小红书收藏功能分析"
+                             onerror="this.src='https://placehold.co/400x250/6366F1/FFFFFF?text=小红书收藏功能'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">小红书收藏功能分析</h3>
+                        <p class="project-description">
+                            针对小红书收藏功能核心痛点，主导用户需求挖掘至产品优化策略输出的全流程。
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">User Research</span>
+                            <span class="tag">Product Analysis</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-href="project-aging-health.html">
+                    <div class="project-image">
+                        <img src="assets/卡片3.png"
+                             alt="暖小伴——适老化健康管理APP"
+                             onerror="this.src='https://placehold.co/400x250/A855F7/FFFFFF?text=暖小伴'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">暖小伴——适老化健康管理APP</h3>
+                        <p class="project-description">
+                            一款为长辈设计的健康工具，简单易上手，无冗余功能。
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">App Design</span>
+                            <span class="tag">UX Research</span>
+                            <span class="tag">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-href="project-joblens-ai.html">
+                    <div class="project-image">
+                        <img src="assets/JobLensAI.png"
+                             alt="JobLens AI——智能岗位匹配分析"
+                             onerror="this.src='https://placehold.co/400x250/A855F7/FFFFFF?text=JobLens AI'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">JobLens AI——智能岗位匹配分析</h3>
+                        <p class="project-description">
+                            AI求职辅助工具，智能解析简历与岗位JD，提供人岗匹配度分析、优势提炼、差距诊断与简历优化建议。
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">求职辅助</span>
+                            <span class="tag">简历分析</span>
+                            <span class="tag">人岗匹配</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <!-- Tools -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🛠️ Tools</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Adobe Illustrator</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Keynote / PPT</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Excel</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Adobe Photoshop</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Axure</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🤖 AI</h3>
+                    <div class="skill-list">
+                        <div class="skill-subcategory">
+                            <h4 class="skill-subtitle">Image Generation (MJ / SD)</h4>
+                            <div class="skill-item">
+                                <span class="skill-name">Prompt Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Quality Evaluation</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-subcategory">
+                            <h4 class="skill-subtitle">Content / AI Assistant</h4>
+                            <div class="skill-item">
+                                <span class="skill-name">Use-case Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Workflow & Automation</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🌐 Language</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Chinese</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">English</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Malay</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Cantonese</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-description">
+                        如果您对我的作品感兴趣，或者有任何合作机会，欢迎随时联系我。
+                        我期待与您交流！
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <div class="contact-label">邮箱</div>
+                                <div class="contact-value">zhouyq021401@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-label">位置</div>
+                                <div class="contact-value">上海, 中国</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div>
+                                <div class="contact-label">微信</div>
+                                <div class="contact-value">zyq2001_</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Valentine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="collapsible-section.js"></script>
+</body>
+</html>
